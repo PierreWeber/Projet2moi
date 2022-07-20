@@ -24,3 +24,4 @@ fi
 
 find ~/ -name "*.txt" -exec cp {} ~/backup \;           # recuperer tout les fichiers existant en .txt
 find ~/ -name "*.txt" -exec cp -n {} ~/backup \;        # ne reecrit pas sur les fichiers existant grace option-n 
+j
