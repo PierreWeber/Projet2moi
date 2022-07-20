@@ -1,13 +1,12 @@
 #!/bin/bash
 
-###while conditions do   				##Attention TRUE  doit etre la condition ##
-## Traitement à répéter Commandes
-###done
+##Presentation de la boucle While  ####
 
-#Exemple
+##while conditions do   				##Attention TRUE doit etre la condition ##
+# Traitement à répéter Commandes
+##done
 
 echo  "Programme de saisie continue" 
-
 saisie=a 
 while [ $saisie != "Y" ]
 do
@@ -15,7 +14,6 @@ do
 	read saisie
 done
 echo -n "Programme Termine"
-
 
 #!/bin/bash
 
@@ -33,15 +31,12 @@ case $on in
 esac
 done
 
-
 ## meme script avec les Fonctions saisie dedans et sans la Boucle WHILE 
 #!/bin/bash
 
 echo "Saisir un caractere (O/o/N/n)"
 read saisie
-
-
-if [ "$saisie" = "O" -o "$saisie" = "o" ]
+if [ "$saisie" = "O" -o "$saisie" = "o" ]			#La condition possede un OR -o 
 then
 	echo "OUI"
 elif [ "$saisie" = "N" -o "$saisie" = "n" ] 
@@ -54,7 +49,7 @@ fi
 # le break permet de sortir d un boucle sans terminer l'iteration en cour et sans passer par le test
 #!/bin/bash
 
-while true		## la condition TRUE est viable  
+while true							## la condition TRUE est viable  
 do
         echo -n "list the current dir? (y/n/q) "
         read yn
