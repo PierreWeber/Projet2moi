@@ -1,7 +1,6 @@
-## saveTXT.sh
-
 #!/bin/bash
 
+## saveTXT.sh
 
 if [ ! -d ~/backup ]
 then
