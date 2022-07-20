@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# la commande continue permet de passer directement a l'itération suivante 
-# sans necessairement terminer l'iteration en cours
-
+# la commande continue permet de passer directement a l'itération suivante sans necessairement terminer l'iteration en cours.
 
 for f in *; do
 	[ -f $f ] || continue
@@ -15,6 +13,6 @@ for f in *; do
 	esac
 echo "fin de travail"
 done
-# permet de garder le programme ouvert 
-&
+&						# permet de garder le programme ouvert 
+
 
