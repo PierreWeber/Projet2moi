@@ -6,23 +6,23 @@ echo "1) cotton 60°"
 echo "2) cotton 40°"
 echo "3) laine 30°"
 
-read choix  ## attend la variable choix 
+read choix  			## attend la variable choix 
 
-case $choix in   	# effectue un commande selon le choix 
-1)			# ouvre le cas avec la )
+case $choix in   		# effectue un commande selon le choix 
+1)				# ouvre le cas avec la )
 echo "lancement du prog 1"
-;;			# ferme le case avec ;; 
+;;				# ferme le case avec ;; 
 2)
-
 echo "lancement du prog 2"
 ;;
 3)
 echo "lancement du prog 3"
 ;;
-*) 		# choix par default 
+*) 				# choix par default 
 echo "ce programme n'existe pas"
 ;;
 esac
+
 ## script plus avance pour recherche un utilisateur ###  
 
 #!/bin/bash
@@ -37,7 +37,7 @@ case $users in
 1)
 	echo "Saisir un utilisateur"
 	read utilisateur
-	if grep ^$utilisateur: /etc/passwd > /dev/null;  ## renvoie vers message d'erreur 
+	if grep ^$utilisateur: /etc/passwd > /dev/null;  	## renvoie vers message d'erreur 
 	then
 		echo "l'utilisateur $utilisateur existe"
 	else
@@ -47,8 +47,8 @@ case $users in
 2)	
 	echo "Saisir un utilisateur"
 	read utilisateur
-	uid=`id -u $utilisateur 2> /dev/null`	## recherche par la commande id -u pour l'utilisateur renvoie tout message d erreur hors de la commande  
-	if [ -z $uid ]  ## test la valeur uid , option -z est pour ne pas afficher la valeur UID à 0 
+	uid=`id -u $utilisateur 2> /dev/null`			## recherche par la commande id -u pour l'utilisateur renvoie tout message d erreur hors de la commande  
+	if [ -z $uid ]  					## test la valeur uid , option -z est pour ne pas afficher la valeur UID à 0 
 	then 
 		echo "l'utilisateur $utilisateur n'existe pas"
 	else
@@ -66,13 +66,13 @@ esac
 ### meme script qu'avant mais avant les fonctions saisie 
 #!/bin/bash
 
-saisie() {						## cree la fonction saisie 
+saisie() {							## cree la fonction saisie 
 	echo "Saisir un utilisateur"
 	read utilisateur
 }
 
-verif_existance() {					## cree la fonction existance
-	if grep ^$1: /etc/passwd > /dev/null;		## laisse un parametre 
+verif_existance() {						## cree la fonction existance
+	if grep ^$1: /etc/passwd > /dev/null;			## laisse un parametre 
 	then
 		echo "l'utilisateur $utilisateur existe"
 	else
@@ -88,13 +88,12 @@ read choix
 
 case $choix in
 1)
-	saisie 						###### utilise la fonction saisie 
-	verif_existance $utilisateur			## Utilise la fonction existance avec un parametre la variable utilisateur 
+	saisie 							###### utilise la fonction saisie 
+	verif_existance $utilisateur				## Utilise la fonction existance avec un parametre la variable utilisateur 
 
 ;;
 2)
 	saisie
-
 	uid=`id -u $utilisateur 2> /dev/null`
 	if [ -z $uid ]
 	then 
@@ -111,15 +110,13 @@ q)
 ;;
 esac
 
-
 ## Script avec boucle CASE IF qui determine si un fichier est ouvert , fichier mis en 1er parametre , le 2e parametre est pour changer le drapeau 
 
 #!/bin/bash
 
-
-case $# in     			## ouvre le case avec la valeur 0 qui est le parametre du script 
+case $# in     					## ouvre le case avec la valeur 0 qui est le parametre du script 
 1)
-	if [ -e $1 ]		## le test a la condition de verifier si c'est un fichier 
+	if [ -e $1 ]				## le test a la condition de verifier si c'est un fichier 
 	then
 		cat $1
 	else
@@ -127,7 +124,7 @@ case $# in     			## ouvre le case avec la valeur 0 qui est le parametre du scri
 	fi
 ;;
 2)
-	if [ $2 = "on" ]	## le 2eme parametre active le flag on/off/flop , verifier grave a IF
+	if [ $2 = "on" ]			## le 2eme parametre active le flag on/off/flop , verifier grave a IF
 	then
 		echo 1 > $1
 	elif [ $2 = "off" ]
