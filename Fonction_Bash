@@ -1,0 +1,17 @@
+
+#/bin/bash
+
+function Nom_Fonction
+{
+    #code
+}
+read variable <---- pour une saisie au clavier 
+echo $variable <--- Afficher le contenu de la variable 
+
+
+Function Affichage 
+{
+    Echo $1 <-  faire un echo du 1er parametre de la fonction 
+}
+
+
