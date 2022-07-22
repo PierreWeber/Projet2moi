@@ -16,13 +16,14 @@ verif_existance() {						## cree la fonction existance
 
 Creation_utilisateur() {
 	read name
-	adduser -D name
-
+	sudo adduser name
+	echo " l'utilisateur " $name " est crée."
 }
 
 Supprimer_Utilisateur() {
-
-	userdel
+	read name
+	sudo userdel name
+	echo " L'utilisateur "$name" est supprimé ." 
 }
 
 
@@ -51,13 +52,10 @@ case $choix in
 	fi
 ;;
 3)
-	Creation utilisateur
-	 
-	
+	Creation_utilisateur	 	
 ;;
 4)
-	Supprimer_Utilisateur
-	 
+	Supprimer_Utilisateur	 
 ;;
 q)
 	exit
