@@ -14,8 +14,22 @@ verif_existance() {						## cree la fonction existance
 	fi
 }
 
+Creation_utilisateur() {
+	read name
+	adduser -D name
+
+}
+
+Supprimer_Utilisateur() {
+
+	userdel
+}
+
+
 echo "1- Verifier l'existence d'un utilisateur"
 echo "2- Connaitre l'UID d'un utilisateur"
+echo "3- Creation d'un utilisateur"
+echo "4- Suppression d'un utilisateur"
 echo "q- Quitter"
 
 read choix
@@ -36,10 +50,19 @@ case $choix in
 		echo "l'uid de $utilisateur est $uid"
 	fi
 ;;
+3)
+	Creation utilisateur
+	 
+	
+;;
+4)
+	Supprimer_Utilisateur
+	 
+;;
 q)
 	exit
 ;;
 *)
-	echo "reponse incorrecte : 1 / 2 / q"
+	echo "reponse incorrecte : 1 / 2 / 3 / 4 /q"
 ;;
 esac
